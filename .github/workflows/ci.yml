@@ -8,14 +8,13 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
+    - uses: appleboy/ssh-action@master
         with:
-        host: ${{ secrets.HOST }}
-        username: ubuntu
-        key: ${{ secrets.KEY }}
-        port: 22
-        script: |
-            pwd
-        id: deploy_step
+            host: ${{ secrets.HOST }}
+            username: ubuntu
+            key: ${{ secrets.KEY }}
+            port: 22
+            script: |
+                pwd
+    
     
